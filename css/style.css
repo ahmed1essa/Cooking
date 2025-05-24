@@ -1,0 +1,1221 @@
+/* الأساسيات */
+:root {
+    --primary-color: #c10a28;
+    --secondary-color: #222;
+    --light-color: #fff;
+    --dark-color: #333;
+    --gray-color: #f5f5f5;
+    --text-color: #555;
+    --border: .1rem solid rgba(0,0,0,.1);
+    --box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    font-family: 'Tajawal', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    direction: rtl;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--light-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 3rem;
+    background: var(--primary-color);
+    color: var(--light-color);
+    font-size: 1.7rem;
+    cursor: pointer;
+    border-radius: .5rem;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--box-shadow);
+}
+
+.heading {
+    text-align: center;
+    font-size: 4rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.heading span {
+    color: var(--primary-color);
+}
+
+.heading::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8rem;
+    height: .3rem;
+    background: var(--primary-color);
+}
+
+.sub-heading {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 4rem;
+}
+
+/* الشريط العلوي */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--light-color);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem 0;
+    transition: var(--transition);
+}
+
+.header.active {
+    padding: 1rem 0;
+    background: var(--light-color);
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo img {
+    height: 5rem;
+}
+
+.header .navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.header .navbar ul li a {
+    font-size: 1.7rem;
+    color: var(--secondary-color);
+    margin: 0 1.5rem;
+    padding: .5rem 0;
+    position: relative;
+}
+
+.header .navbar ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+.header .navbar ul li a:hover::before,
+.header .navbar ul li a.active::before {
+    width: 100%;
+    left: 0;
+}
+
+.header .icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header .icons .btn-reserve {
+    display: none;
+}
+
+.header .icons #menu-btn {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    cursor: pointer;
+    display: none;
+}
+
+/* القسم الرئيسي */
+.home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url('../images/home-bg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin-top: 8rem;
+}
+
+.home .content {
+    max-width: 60rem;
+}
+
+.home .content h1 {
+    font-size: 6rem;
+    color: var(--light-color);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+.home .content p {
+    font-size: 2rem;
+    color: #eee;
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+
+/* قسم عن المطعم */
+.about {
+    padding: 8rem 0;
+}
+
+.about .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
+.about .image {
+    flex: 1 1 40rem;
+}
+
+.about .image img {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+}
+
+.about .content {
+    flex: 1 1 40rem;
+}
+
+.about .content h2 {
+    font-size: 3.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+}
+
+.about .content p {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.about .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.about .features .box {
+    text-align: center;
+    padding: 2rem;
+    background: var(--gray-color);
+    border-radius: .5rem;
+    transition: var(--transition);
+}
+
+.about .features .box:hover {
+    transform: translateY(-1rem);
+    box-shadow: var(--box-shadow);
+}
+
+.about .features .box i {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.about .features .box h3 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+}
+
+/* قائمة الطعام */
+.menu {
+    padding: 8rem 0;
+    background: var(--gray-color);
+}
+
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.menu-tabs .tab-btn {
+    padding: 1rem 2.5rem;
+    background: var(--light-color);
+    color: var(--secondary-color);
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.menu-tabs .tab-btn.active,
+.menu-tabs .tab-btn:hover {
+    background: var(--primary-color);
+    color: var(--light-color);
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+}
+
+.menu-item {
+    background: var(--light-color);
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    display: none;
+}
+
+.menu-item.show {
+    display: block;
+}
+
+.menu-item:hover {
+    transform: translateY(-1rem);
+}
+
+.menu-item .image {
+    height: 25rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+.menu-item .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.menu-item:hover .image img {
+    transform: scale(1.1);
+}
+
+.menu-item .content {
+    padding: 2rem;
+}
+
+.menu-item .content .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.menu-item .content .title h3 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.menu-item .content .title span {
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.menu-item .content p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* معرض الصور */
+.gallery {
+    padding: 8rem 0;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+}
+
+.gallery-box {
+    position: relative;
+    height: 25rem;
+    overflow: hidden;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.gallery-box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.gallery-box:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-box .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.gallery-box:hover .overlay {
+    opacity: 1;
+}
+
+.gallery-box .overlay i {
+    font-size: 3rem;
+    color: var(--light-color);
+    background: var(--primary-color);
+    height: 6rem;
+    width: 6rem;
+    line-height: 6rem;
+    border-radius: 50%;
+    text-align: center;
+}
+
+/* قسم التقييمات */
+.reviews {
+    padding: 8rem 0;
+    background: var(--gray-color);
+}
+
+.reviews-slider {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding-bottom: 3rem;
+    scroll-snap-type: x mandatory;
+}
+
+.reviews-slider::-webkit-scrollbar {
+    height: 1rem;
+}
+
+.reviews-slider::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 5rem;
+}
+
+.reviews-slider::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5rem;
+}
+
+.review-box {
+    min-width: 35rem;
+    background: var(--light-color);
+    padding: 3rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    scroll-snap-align: start;
+}
+
+.review-box .stars {
+    margin-bottom: 2rem;
+}
+
+.review-box .stars i {
+    font-size: 1.8rem;
+    color: gold;
+}
+
+.review-box p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.review-box .user {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.review-box .user img {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.review-box .user h3 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+}
+
+/* قسم الاتصال */
+.contact {
+    padding: 8rem 0;
+}
+
+.contact .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.contact .contact-info {
+    flex: 1 1 40rem;
+}
+
+.contact .contact-form {
+    flex: 1 1 40rem;
+}
+
+.contact .info-box {
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.contact .info-box i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    text-align: center;
+    background: var(--gray-color);
+    border-radius: 50%;
+}
+
+.contact .info-box h3 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.contact .info-box p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+.contact-form .input-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.7rem;
+    background: var(--gray-color);
+    border-radius: .5rem;
+}
+
+.contact-form textarea {
+    height: 15rem;
+    resize: none;
+    margin-bottom: 2rem;
+}
+
+/* الفوتر */
+.footer {
+    background: var(--secondary-color);
+    padding: 5rem 0 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 3rem;
+}
+
+.footer-box h3 {
+    font-size: 2.2rem;
+    color: var(--light-color);
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.footer-box h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 6rem;
+    height: .2rem;
+    background: var(--primary-color);
+}
+
+.footer-box ul {
+    list-style: none;
+}
+
+.footer-box ul li {
+    margin-bottom: 1.5rem;
+}
+
+.footer-box ul li a {
+    font-size: 1.6rem;
+    color: #ccc;
+    display: block;
+    transition: var(--transition);
+}
+
+.footer-box ul li a:hover {
+    color: var(--primary-color);
+    transform: translateX(-1rem);
+}
+
+.footer-box .social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.footer-box .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 4rem;
+    background: rgba(255,255,255,.1);
+    color: var(--light-color);
+    font-size: 1.8rem;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.footer-box .social-links a:hover {
+    background: var(--primary-color);
+    transform: translateY(-.5rem);
+}
+
+.footer-box .newsletter p {
+    font-size: 1.6rem;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+}
+
+.footer-box .newsletter form {
+    display: flex;
+    background: var(--light-color);
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.footer-box .newsletter form input {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.6rem;
+}
+
+.footer-box .newsletter form button {
+    padding: 0 1.5rem;
+    font-size: 1.8rem;
+    background: var(--primary-color);
+    color: var(--light-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.footer-box .newsletter form button:hover {
+    background: var(--secondary-color);
+}
+
+.copyright {
+    text-align: center;
+    padding: 2.5rem 0;
+    margin-top: 3rem;
+    border-top: var(--border);
+}
+
+.copyright p {
+    font-size: 1.6rem;
+    color: #ccc;
+}
+
+/* زر العودة للأعلى */
+.back-to-top {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    text-align: center;
+    background: var(--primary-color);
+    color: var(--light-color);
+    font-size: 2rem;
+    border-radius: 50%;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--secondary-color);
+    transform: translateY(-.5rem);
+}
+
+/* نموذج الحجز */
+.reservation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.7);
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.reservation-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.reservation-modal .modal-content {
+    background: var(--light-color);
+    width: 50rem;
+    padding: 3rem;
+    border-radius: .5rem;
+    position: relative;
+}
+
+.reservation-modal .close-modal {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.reservation-modal .close-modal:hover {
+    color: var(--primary-color);
+}
+
+.reservation-modal h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.reservation-modal .input-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.reservation-modal .input-group input {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.6rem;
+    background: var(--gray-color);
+    border-radius: .5rem;
+}
+
+.reservation-modal textarea {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.6rem;
+    background: var(--gray-color);
+    border-radius: .5rem;
+    resize: none;
+    height: 10rem;
+    margin-bottom: 2rem;
+}
+
+/* معرض الصور المكبرة */
+.gallery-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.8);
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.gallery-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.gallery-modal img {
+    max-width: 80%;
+    max-height: 80%;
+    border: .5rem solid var(--light-color);
+    border-radius: .5rem;
+}
+
+.gallery-modal .close-gallery {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 4rem;
+    color: var(--light-color);
+    cursor: pointer;
+}
+
+.gallery-modal .close-gallery:hover {
+    color: var(--primary-color);
+}
+
+/* الاستجابة للشاشات الصغيرة */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    
+    .header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--light-color);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: var(--transition);
+    }
+    
+    .header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    
+    .header .navbar ul {
+        flex-direction: column;
+        padding: 2rem;
+    }
+    
+    .header .navbar ul li {
+        width: 100%;
+    }
+    
+    .header .navbar ul li a {
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem 0;
+        background: var(--gray-color);
+        border-radius: .5rem;
+    }
+    
+    .header .navbar ul li a::before {
+        display: none;
+    }
+    
+    .header .icons .btn-reserve {
+        display: inline-block;
+    }
+    
+    .header .icons #menu-btn {
+        display: inline-block;
+    }
+    
+/* أكمل الجزء المتبقي من ملف CSS */
+
+/* تأثيرات الحركة والانتقالات */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+    0% { opacity: 0; transform: translateX(50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* تأثيرات للعناصر */
+.home .content {
+    animation: fadeIn 1s ease-out;
+}
+
+.about .content {
+    animation: slideInRight 1s ease-out;
+}
+
+.btn:hover {
+    animation: pulse 1s infinite;
+}
+
+/* تحسينات للشريط العلوي */
+.header .logo img {
+    transition: var(--transition);
+}
+
+.header .logo:hover img {
+    transform: rotate(5deg);
+}
+
+/* تحسينات لقائمة الطعام */
+.menu-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
+    z-index: 1;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.menu-item:hover::before {
+    opacity: 1;
+}
+
+.menu-item .content {
+    position: relative;
+    z-index: 2;
+}
+
+/* تحسينات لمعرض الصور */
+.gallery-box {
+    perspective: 1000px;
+}
+
+.gallery-box img {
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.gallery-box:hover img {
+    transform: scale(1.1) rotate(1deg);
+}
+
+/* تحسينات للتقييمات */
+.review-box {
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.review-box:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-10px);
+}
+
+/* تحسينات لنموذج الاتصال */
+.contact-form input,
+.contact-form textarea {
+    transition: var(--transition);
+    border: 1px solid #ddd;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(193, 10, 40, 0.2);
+}
+
+/* تحسينات للفوتر */
+.footer-box ul li a::before {
+    content: '→ ';
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.footer-box ul li a:hover::before {
+    opacity: 1;
+    margin-left: 5px;
+}
+
+/* تأثيرات خاصة للجوائز أو الشهادات (يمكن إضافتها لاحقًا) */
+.award-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 3;
+    animation: pulse 2s infinite;
+}
+
+/* تحسينات للعروض الخاصة */
+.special-offer {
+    position: relative;
+    border: 2px dashed var(--primary-color);
+}
+
+.special-offer::after {
+    content: 'عرض خاص';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: var(--primary-color);
+    color: white;
+    padding: 0 10px;
+    border-radius: 5px;
+    font-size: 1.4rem;
+}
+
+/* تحسينات للتاريخ والوقت في نموذج الحجز */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.5);
+    cursor: pointer;
+}
+
+/* تحسينات للهواتف الذكية */
+@media (max-width: 768px) {
+    .home .content h1 {
+        font-size: 4rem;
+        animation: none;
+    }
+    
+    .about .container,
+    .contact .row {
+        flex-direction: column;
+    }
+    
+    .menu-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        justify-content: flex-start;
+    }
+    
+    .menu-tabs .tab-btn {
+        white-space: nowrap;
+    }
+    
+    .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    }
+    
+    .reservation-modal .modal-content {
+        width: 90%;
+    }
+    
+    .reservation-modal .input-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* تحسينات للطباعة */
+@media print {
+    .header,
+    .footer,
+    .back-to-top,
+    .btn {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+    
+    .container {
+        width: 100%;
+        padding: 0;
+    }
+    
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        font-weight: normal;
+    }
+}
+}
+
+@media (max-width: 768px) {
+    /* تحسينات لعرض التقييمات */
+    .reviews-slider {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        overflow-x: visible;
+        padding-bottom: 0;
+    }
+    
+    .review-box {
+        min-width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    /* إزالة شريط التمرير الأفقي */
+    .reviews-slider::-webkit-scrollbar {
+        display: none;
+    }
+
+        .footer-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .footer-box {
+        text-align: center;
+    }
+    
+    .footer-box h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .newsletter form {
+        max-width: 100%;
+    }
+
+}
+
+/* إزالة أو تعديل استعلام الوضع المظلم */
+@media (prefers-color-scheme: dark) {
+    /* يمكنك حذف هذا الكود بالكامل أو تعديله كما يلي */
+    body {
+        background-color: #ffffff !important;
+        color: #333333 !important;
+    }
+    
+    .header,
+    .menu-item,
+    .review-box,
+    .footer {
+        background-color: #ffffff !important;
+    }
+    
+    .header .navbar ul li a,
+    .heading,
+    .footer-box h3,
+    .review-box h3 {
+        color: #333333 !important;
+    }
+    
+    .footer-box ul li a,
+    .copyright p {
+        color: #555555 !important;
+    }
+    
+    .contact-form input,
+    .contact-form textarea,
+    .about .features .box {
+        background-color: #f5f5f5 !important;
+        color: #333333 !important;
+    }
+    
+    .menu {
+        background-color: #f5f5f5 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* تحسينات عامة */
+    html {
+        font-size: 55%;
+    }
+    
+    .heading {
+        font-size: 3rem;
+    }
+    
+    .sub-heading {
+        font-size: 1.8rem;
+    }
+    
+    /* تحسينات للقوائم */
+    .menu-tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        justify-content: flex-start;
+    }
+    
+    .menu-tabs .tab-btn {
+        font-size: 1.5rem;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    /* تحسينات للصور */
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+     a, button, input[type="submit"] {
+        min-height: 48px;
+        min-width: 48px;
+    }
+}

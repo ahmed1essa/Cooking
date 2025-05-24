@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>مطبخي | تجربة طعام فاخرة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="مطعم 99">
+            </a>
+            
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#home" class="active">الرئيسية</a></li>
+                    <li><a href="#about">عن المطعم</a></li>
+                    <li><a href="#menu">قائمة الطعام</a></li>
+                    <li><a href="#gallery">معرض الصور</a></li>
+                    <li><a href="#reviews">تقييمات</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            
+            <div class="icons">
+                <a href="#" class="btn btn-reserve">حجز طاولة</a>
+                <div id="menu-btn" class="fas fa-bars"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- القسم الرئيسي -->
+    <section class="home" id="home">
+        <div class="container">
+            <div class="content">
+                <h1>تجربة طعام لا تنسى</h1>
+                <p>نقدم لكم ألذ الأطباق المعدة بأيدي خبراء الطهي باستخدام أفضل المكونات الطازجة</p>
+                <a href="#menu" class="btn">استعرض القائمة</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم عن المطعم -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="image">
+                <img src="images/about-img.jpg" alt="عن المطعم">
+            </div>
+            
+            <div class="content">
+                <h2 class="heading">عن مطبخي</h2>
+                <p>تأسس مطبخي عام 2020 بمفهوم بسيط وهو تقديم تجربة طعام استثنائية في جو راقٍ وخدمة مميزة. نحن نفتخر بمطبخنا المبتكر الذي يجمع بين الأصالة والحداثة.</p>
+                <p>جميع مكوناتنا طازجة ومصدرها محلي حيثما أمكن، ونعمل مع موردين موثوقين لضمان الجودة العالية لكل طبق نقدمه لضيوفنا.</p>
+                <div class="features">
+                    <div class="box">
+                        <i class="fas fa-utensils"></i>
+                        <h3>أطباق مميزة</h3>
+                    </div>
+                    <div class="box">
+                        <i class="fas fa-wine-glass-alt"></i>
+                        <h3>مشروبات فاخرة</h3>
+                    </div>
+                    <div class="box">
+                        <i class="fas fa-headset"></i>
+                        <h3>خدمة ممتازة</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم قائمة الطعام -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <h2 class="heading">قائمة <span>الطعام</span></h2>
+            <p class="sub-heading">اكتشف تشكيلتنا المميزة من الأطباق المعدة بعناية</p>
+            
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-category="all">الكل</button>
+                <button class="tab-btn" data-category="starters">المقبلات</button>
+                <button class="tab-btn" data-category="main">الوجبات الرئيسية</button>
+                <button class="tab-btn" data-category="desserts">الحلويات</button>
+                <button class="tab-btn" data-category="drinks">المشروبات</button>
+            </div>
+            
+            <div class="menu-items">
+                <!-- سيتم ملؤها بواسطة JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم معرض الصور -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="heading">معرض <span>الصور</span></h2>
+            <p class="sub-heading">لقطات من أجواء مطعمنا وأطباقنا</p>
+            
+            <div class="gallery-container">
+                <div class="gallery-box">
+                    <img src="images/gallery-1.jpg" alt="صورة 1">
+                    <div class="overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-box">
+                    <img src="images/gallery-2.jpg" alt="صورة 2">
+                    <div class="overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-box">
+                    <img src="images/gallery-3.jpg" alt="صورة 3">
+                    <div class="overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-box">
+                    <img src="images/gallery-4.jpg" alt="صورة 4">
+                    <div class="overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-box">
+                    <img src="images/gallery-5.jpg" alt="صورة 5">
+                    <div class="overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-box">
+                    <img src="images/gallery-6.jpg" alt="صورة 6">
+                    <div class="overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التقييمات -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <h2 class="heading">تقييمات <span>الزبائن</span></h2>
+            <p class="sub-heading">ما يقولونه عنا</p>
+            
+            <div class="reviews-slider">
+                <div class="review-box">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>أفضل تجربة طعام في المدينة! الخدمة رائعة والأطباق لذيذة جدًا. أوصي بشدة بتجربة طبق السمك المشوي.</p>
+                    <div class="user">
+                        <img src="images/user-1.jpg" alt="محمد أحمد">
+                        <h3>محمد أحمد</h3>
+                    </div>
+                </div>
+                
+                <div class="review-box">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>الجو رائع والطعام ممتاز. أحببت خاصة الحلويات المنزلية الصنع. سأعود بالتأكيد مع العائلة.</p>
+                    <div class="user">
+                        <img src="images/user-2.jpg" alt="نورا عبدالله">
+                        <h3>نورا عبدالله</h3>
+                    </div>
+                </div>
+                
+                <div class="review-box">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>المطعم المفضل لدي! جودة الطعام لا تضاهى والموظفون محترفون جدًا. أشكركم على التجربة الرائعة.</p>
+                    <div class="user">
+                        <img src="images/user-3.jpg" alt="خالد سليمان">
+                        <h3>خالد سليمان</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الاتصال -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="heading">اتصل <span>بنا</span></h2>
+            <p class="sub-heading">نحن هنا لمساعدتك وتلقي استفساراتك</p>
+            
+            <div class="row">
+                <div class="contact-info">
+                    <div class="info-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>العنوان</h3>
+                        <p>الكويت ـ اسواق القرين </p>
+                    </div>
+                    
+                    <div class="info-box">
+                        <i class="fas fa-phone"></i>
+                        <h3>الهاتف</h3>
+                        <p>+965 2222 4567</p>
+                    </div>
+                    
+                    <div class="info-box">
+                        <i class="fas fa-envelope"></i>
+                        <h3>البريد الإلكتروني</h3>
+                        <p>info@resturant.com</p>
+                    </div>
+                    
+                    <div class="info-box">
+                        <i class="fas fa-clock"></i>
+                        <h3>ساعات العمل</h3>
+                        <p>الأحد - الخميس: 12 ظهراً - 12 منتصف الليل</p>
+                        <p>الجمعة - السبت: 1 ظهراً - 1 صباحاً</p>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="اسمك" required>
+                        <input type="email" placeholder="بريدك الإلكتروني" required>
+                    </div>
+                    <input type="text" placeholder="الموضوع">
+                    <textarea placeholder="رسالتك" required></textarea>
+                    <button type="submit" class="btn">إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-box">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#about">عن المطعم</a></li>
+                        <li><a href="#menu">قائمة الطعام</a></li>
+                        <li><a href="#gallery">معرض الصور</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-box">
+                    <h3>ساعات العمل</h3>
+                    <ul>
+                        <li>الأحد - الخميس: 12 ظهراً - 12 منتصف الليل</li>
+                        <li>الجمعة - السبت: 1 ظهراً - 1 صباحاً</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-box">
+                    <h3>تابعنا</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-snapchat-ghost"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <p>اشترك في نشرتنا البريدية</p>
+                        <form>
+                            <input type="email" placeholder="بريدك الإلكتروني">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy;   جميع الحقوق محفوظة لمطبخي.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- زر العودة للأعلى -->
+    <a href="#home" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- نموذج الحجز -->
+    <div class="reservation-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>حجز طاولة</h2>
+            <form>
+                <div class="input-group">
+                    <input type="text" placeholder="اسمك" required>
+                    <input type="email" placeholder="بريدك الإلكتروني" required>
+                </div>
+                <div class="input-group">
+                    <input type="tel" placeholder="رقم الهاتف" required>
+                    <input type="number" placeholder="عدد الأشخاص" min="1" required>
+                </div>
+                <div class="input-group">
+                    <input type="date" required>
+                    <input type="time" required>
+                </div>
+                <textarea placeholder="ملاحظات إضافية (اختياري)"></textarea>
+                <button type="submit" class="btn">تأكيد الحجز</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- معرض الصور المكبرة -->
+    <div class="gallery-modal">
+        <span class="close-gallery">&times;</span>
+        <img src="" alt="صورة مكبرة">
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
